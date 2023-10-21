@@ -1,5 +1,6 @@
 # Maven
 
+
 # Build your Java project and run tests with Apache Maven.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
@@ -10,7 +11,14 @@ trigger:
 pool: Ubuntu Office
 
 steps:
-
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Free Trial(25d7e7c1-5e33-4290-bb27-684ca2c520da)'
+    appType: 'webAppLinux'
+    WebAppName: 'Host23'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    RuntimeStack: 'JAVA|11-java11'
 - task: JavaToolInstaller@0
   inputs:
     versionSpec: '11'
