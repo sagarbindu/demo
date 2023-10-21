@@ -7,7 +7,7 @@ pool: Ubuntu Office
 
 steps:
 
-- task: Maven@4
+- task: Maven@3
   inputs:
     mavenPomFile: 'demo/pom.xml'
     publishJUnitResults: true
