@@ -11,19 +11,7 @@ trigger:
 pool: Ubuntu Office
 
 steps:
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Free Trial(25d7e7c1-5e33-4290-bb27-684ca2c520da)'
-    appType: 'webAppLinux'
-    WebAppName: 'Host23'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    RuntimeStack: 'JAVA|11-java11'
-- task: JavaToolInstaller@0
-  inputs:
-    versionSpec: '11'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'PreInstalled'
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'demo/pom.xml'
