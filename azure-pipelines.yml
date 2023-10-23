@@ -3,14 +3,15 @@
 trigger:
 - main
 
-pool: Ubuntu Office
+pool: 
+  vmImage: 'ubuntu-latest'
 
 steps:
 
 
 - task: Maven@4
   inputs:
-    mavenPomFile: 'demo/pom.xml'
+    mavenPomFile: '$(System.DefaultWorkingDirectory)/demo/demo/pom.xml'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     mavenVersionOption: 'Default'
