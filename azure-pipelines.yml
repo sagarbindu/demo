@@ -11,7 +11,7 @@ steps:
 
 - task: Maven@4
   inputs:
-    mavenPomFile: '$(System.DefaultWorkingDirectory)/demo/demo/pom.xml'
+    mavenPomFile: '$(System.DefaultWorkingDirectory)/demo/pom.xml'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     mavenVersionOption: 'Default'
